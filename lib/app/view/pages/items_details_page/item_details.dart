@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+
+import '../../../../components/constant/them.dart';
+import '../../../model/service_model.dart';
+
+part 'item_details_body.dart';
+part 'item_details_footer.dart';
+part 'item_details_header.dart';
+
+class ItemDetails extends StatelessWidget {
+  final Service? service;
+  const ItemDetails({
+    super.key,
+    this.service,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+          color: MyThem.wight, borderRadius: BorderRadius.circular(10)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ItemHeader(photo: service!.photo),
+          const SizedBox(height: 16),
+          Expanded(
+              child: ItemBody(
+            service: service!,
+          )),
+          const SizedBox(height: 16),
+          const ItemFooter()
+        ],
+      ),
+    );
+  }
+}
