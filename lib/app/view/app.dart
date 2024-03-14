@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../components/constant/them.dart';
-import 'pages/booking/booking_page.dart';
+import 'pages/orders/orders_page.dart';
 import 'pages/home/home_page.dart';
 import 'pages/profile/profile_page.dart';
 
@@ -16,7 +16,7 @@ List<TabData> tabs = [
       title: "Booking",
       tabColor: MyThem.secondaryColor),
 ];
-List pages = const [ProfilePage(), HomePage(), BookingPage()];
+List pages = const [ProfilePage(), HomePage(), OrdersPage()];
 int _currentPage = 1;
 String currentTitle = tabs[_currentPage].title;
 Color currentColor = tabs[_currentPage].tabColor!;
@@ -32,7 +32,9 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset: false,
+        // ? For what !!!
+
+        resizeToAvoidBottomInset: true,
         backgroundColor: MyThem.wight,
         body: pages[_currentPage],
         bottomNavigationBar: CubertoBottomBar(

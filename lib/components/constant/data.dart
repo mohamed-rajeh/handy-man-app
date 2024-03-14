@@ -4,11 +4,11 @@ import 'package:ser/app/model/service_model.dart';
 List servicesData = [
   Service(
       id: 1,
-      name: "handy man",
+      name: "handy manflkvofvjfvfmv;,f ;f",
       category: 1,
       photo: null,
       price: 3000,
-      description: "lorem lorem lorem",
+      description: "lorem lorem loremlorem lorem lorem",
       details:
           "loremloremloremloremloremloremloremloremlorem lorem lorem lorem loremloremlorem"),
   Service(

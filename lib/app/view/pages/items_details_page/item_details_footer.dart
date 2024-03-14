@@ -7,15 +7,6 @@ class ItemFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: MyThem.primaryColor,
-      alignment: Alignment.center,
-      height: 60,
-      width: double.maxFinite,
-      child: Text(
-        "Book now",
-        style: MyThem.tfontStyle,
-      ),
-    );
+    return MyButton(lable: "bookNow".tr, color: MyThem.secondaryColor);
   }
 }

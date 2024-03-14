@@ -4,34 +4,31 @@ import 'package:ser/app/controller/service_controller.dart';
 import 'package:ser/app/model/service_model.dart';
 import 'package:ser/components/constant/them.dart';
 
-import '../items_details_page/item_details.dart';
+import '../../items_details_page/item_details.dart';
 
-class ServicePage extends StatelessWidget {
-  const ServicePage({
+class ItServicePage extends StatelessWidget {
+  const ItServicePage({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    Map? mp = Get.arguments;
-    String? title = mp!["title"];
-    int? id = mp["id"];
     ServiceController serviceController = Get.find();
     return Scaffold(
       backgroundColor: MyThem.wight,
       appBar: AppBar(
         scrolledUnderElevation: 0,
-        title: Text(
-          title ?? "null",
+        title: const Text(
+          "IT sevices",
         ),
         centerTitle: true,
         backgroundColor: MyThem.wight,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
         child: Obx(() {
           List items = serviceController.services
-              .where((element) => element.category == id)
+              .where((element) => element.category == 2) //! shud fix
               .toList();
           return ServicePageItems(
             items: items,

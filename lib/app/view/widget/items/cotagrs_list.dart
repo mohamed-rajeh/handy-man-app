@@ -5,8 +5,9 @@ import 'package:ser/app/model/category_model.dart';
 import 'package:ser/components/constant/them.dart';
 
 class CategoryItem extends StatelessWidget {
+  final Color color;
   final Category item;
-  const CategoryItem({super.key, required this.item});
+  const CategoryItem({super.key, required this.item, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +15,17 @@ class CategoryItem extends StatelessWidget {
     return InkWell(
       onTap: () => serviceController.checkCat(item.id),
       child: Container(
-        padding: const EdgeInsets.all(7),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         decoration: BoxDecoration(
-            color: MyThem.primaryColor,
-            borderRadius: BorderRadius.circular(10)),
-        child: Text(item.name),
+          color: color,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Text(
+          item.name,
+          style: MyThem.tfontStyle.copyWith(
+            color: color == MyThem.secondaryColor ? MyThem.wight : MyThem.black,
+          ),
+        ),
       ),
     );
   }

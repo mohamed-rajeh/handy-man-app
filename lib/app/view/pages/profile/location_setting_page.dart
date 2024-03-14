@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ser/components/constant/them.dart';
-import 'package:dropdown_search/dropdown_search.dart';
+import 'package:ser/components/shared/my_button.dart';
+import 'package:ser/components/shared/my_lable.dart';
+import 'package:ser/components/shared/my_text_field.dart';
 
 class LocationSettingPage extends StatelessWidget {
   const LocationSettingPage({super.key});
@@ -8,55 +11,34 @@ class LocationSettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      appBar: AppBar(
+        title: Text("location".tr),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            MyDropdown(),
-            MyDropdown(),
-            SizedBox(
-              height: 30,
+            MyLabel(text: "city".tr, minTextSize: 18),
+            const SizedBox(height: 16),
+            MyTextField(hint: "cityHint".tr),
+            const SizedBox(height: 16),
+            MyLabel(text: "sreat".tr, minTextSize: 18),
+            const SizedBox(height: 16),
+            MyTextField(hint: "streatHint".tr),
+            const SizedBox(height: 30),
+            MyLabel(text: "note".tr, minTextSize: 18),
+            const SizedBox(height: 16),
+            MyTextField(
+              maxLine: 10,
+              hint: "noteHint".tr,
             ),
-            TextField(
-              maxLines: 10,
-              decoration: InputDecoration(border: OutlineInputBorder()),
-            ),
+            const Spacer(),
+            MyButton(lable: "save".tr, color: MyThem.secondaryColor)
           ],
         ),
       ),
-    );
-  }
-}
-
-List<String> lc = [
-  "Strineet 1",
-  "Strineet 2",
-  "Strineet 3",
-];
-
-class MyDropdown extends StatelessWidget {
-  const MyDropdown({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return DropdownSearch<String>(
-      // selectedItem: list.first,
-
-      popupProps: const PopupProps.menu(),
-      items: lc,
-      itemAsString: (item) => item,
-      dropdownDecoratorProps: DropDownDecoratorProps(
-        dropdownSearchDecoration: InputDecoration(
-          enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: MyThem.secondaryColor)),
-          suffixIconColor: MyThem.secondaryColor,
-          labelText: "Loction",
-          labelStyle: MyThem.nfontStyle.copyWith(
-              color: MyThem.secondaryColor, fontWeight: FontWeight.bold),
-          hintText: "Loc",
-        ),
-      ),
-      onChanged: (value) {},
     );
   }
 }

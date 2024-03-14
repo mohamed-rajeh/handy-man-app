@@ -27,5 +27,5 @@ class MyThem {
   static TextStyle nfontStyle = const TextStyle(fontSize: 16);
 //title text style
   static TextStyle tfontStyle =
-      const TextStyle(fontSize: 18, fontWeight: FontWeight.w600);
+      const TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
 }

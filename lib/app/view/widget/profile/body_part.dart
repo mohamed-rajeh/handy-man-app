@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ser/app/view/pages/profile/account_setting_page.dart';
-import 'package:ser/app/view/widget/profile/my_lable.dart';
+import 'package:ser/components/shared/my_lable.dart';
 import 'package:ser/app/view/widget/profile/my_list_tile.dart';
 
 import '../../../../components/constant/them.dart';
 import '../../pages/profile/location_setting_page.dart';
 
-class BodyPart extends StatelessWidget {
+class BodyPart extends StatefulWidget {
   const BodyPart({super.key});
 
+  @override
+  State<BodyPart> createState() => _BodyPartState();
+}
+
+class _BodyPartState extends State<BodyPart> {
   @override
   Widget build(context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -35,6 +40,12 @@ class BodyPart extends StatelessWidget {
       const MyLabel(text: "Settings", minTextSize: 20),
       const SizedBox(height: 10),
       const DarkModeListTile(),
+      const SizedBox(height: 10),
+      MyListTile(
+          icon: Icons.translate,
+          widget: const SizedBox.shrink(),
+          title: "language".tr,
+          iconColor: MyThem.secondaryColor),
       const SizedBox(height: 10),
       MyListTile(
         icon: Icons.info_outline_rounded,

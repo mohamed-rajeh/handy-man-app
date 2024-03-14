@@ -16,8 +16,7 @@ class Sections extends StatelessWidget {
         children: [
           SectionButton(
             title: "IT",
-            onTap: () =>
-                Get.toNamed("it_section", arguments: {"title": "IT", "id": 2}),
+            onTap: () => Get.toNamed("/it_section"),
           ),
           const SizedBox(width: 20),
           Expanded(
@@ -25,14 +24,14 @@ class Sections extends StatelessWidget {
               children: [
                 SectionButton(
                   title: "Home",
-                  onTap: () => Get.toNamed("home_section",
-                      arguments: {"title": "Home", "id": 1}),
+                  onTap: () => Get.toNamed("/handyman_service",
+                      arguments: {"title": "handyman".tr, "id": 1}),
                 ),
                 const SizedBox(height: 10),
                 SectionButton(
                   title: "More",
-                  onTap: () => Get.toNamed("more_section",
-                      arguments: {"title": "More", "id": 0}),
+                  onTap: () => Get.toNamed("/more_section",
+                      arguments: {"title": "naqel", "id": 0}),
                 ),
               ],
             ),

@@ -1,21 +1,21 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:ser/app/view/pages/booking/old_orders_page.dart';
+import 'package:ser/app/view/pages/orders/old_orders_page.dart';
 
 import 'package:ser/components/constant/them.dart';
 
 import '../../widget/booking/tab_button.dart';
 import 'curent_orders_page.dart';
 
-class BookingPage extends StatefulWidget {
-  const BookingPage({super.key});
+class OrdersPage extends StatefulWidget {
+  const OrdersPage({super.key});
 
   @override
-  State<BookingPage> createState() => _BookingPageState();
+  State<OrdersPage> createState() => _BookingPageState();
 }
 
-class _BookingPageState extends State<BookingPage> {
+class _BookingPageState extends State<OrdersPage> {
   List<Widget> pages = [
     CurentOrdersPage(),
     OldOrdersPage(),

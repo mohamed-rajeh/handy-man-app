@@ -13,22 +13,26 @@ class ItemBody extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              // the name of service
               Text(
                 service.name,
                 style: MyThem.tfontStyle,
               ),
+              // the price of service
               Text(
-                service.price.toString(),
+                "${service.price}  ${"dolar".tr}",
                 style: MyThem.nfontStyle,
               ),
             ],
           ),
           const SizedBox(height: 16),
+          // the decription of service
           Text(
             service.description,
             style: MyThem.nfontStyle,
           ),
           const SizedBox(height: 16),
+          // the details of service
           Text(
             service.details ?? "No details",
             style: MyThem.nfontStyle,

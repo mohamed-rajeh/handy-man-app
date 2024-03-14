@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                             .toList();
                       }
 
-                      return ItemsSliverGride(service: s);
+                      return HomePopruleItem(service: s);
                     }),
                   ],
                 ),

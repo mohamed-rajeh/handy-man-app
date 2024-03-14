@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ser/components/shared/my_button.dart';
 
 import '../../../../components/constant/them.dart';
 import '../../../model/service_model.dart';
@@ -19,7 +21,9 @@ class ItemDetails extends StatelessWidget {
     return Container(
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-          color: MyThem.wight, borderRadius: BorderRadius.circular(10)),
+        color: MyThem.wight,
+        borderRadius: BorderRadius.circular(10),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -30,7 +34,12 @@ class ItemDetails extends StatelessWidget {
             service: service!,
           )),
           const SizedBox(height: 16),
-          const ItemFooter()
+          MyButton(
+              onTap: () {
+                Get.toNamed("/bookin_location", arguments: service);
+              },
+              lable: "bookNow".tr,
+              color: MyThem.secondaryColor)
         ],
       ),
     );

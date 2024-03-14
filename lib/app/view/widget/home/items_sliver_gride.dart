@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../../../components/shared/item.dart';
+import '../../../../components/animation/fade_in.dart';
+import '../items/item.dart';
 import '../../../model/service_model.dart';
 
-class ItemsSliverGride extends StatelessWidget {
-  const ItemsSliverGride({
+class HomePopruleItem extends StatelessWidget {
+  const HomePopruleItem({
     super.key,
     required this.service,
   });
@@ -22,7 +23,11 @@ class ItemsSliverGride extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           Service s = service[index];
 
-          return Item(service: s);
+          return FadeInAnimation(
+              delay: 1,
+              direction: FadeInDirection.ttb,
+              fadeOffset: 5,
+              child: Item(service: s));
         });
   }
 }

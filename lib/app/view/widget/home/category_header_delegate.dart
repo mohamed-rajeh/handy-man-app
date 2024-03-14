@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ser/components/shared/my_lable.dart';
 
 import '../../../../components/constant/them.dart';
 import '../../../controller/service_controller.dart';
@@ -14,10 +15,10 @@ class CategoryHeaderDelegate extends SliverPersistentHeaderDelegate {
     Category(id: 2, name: "IT"),
   ];
   @override
-  double get minExtent => 60.0; // Minimum height of the header
+  double get minExtent => 80.0; // Minimum height of the header
 
   @override
-  double get maxExtent => 60.0; // Maximum height of the header
+  double get maxExtent => 80.0; // Maximum height of the header
 
   @override
   Widget build(
@@ -28,32 +29,29 @@ class CategoryHeaderDelegate extends SliverPersistentHeaderDelegate {
     bool shouldShowHeader =
         shrinkOffset > 0 || _serviceController.isAll.isFalse;
     // You can customize this widget to display your category information
-    return shouldShowHeader
-        ? Container(
-            height: 60,
-            color: MyThem.wight,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                for (var i in cot)
-                  Padding(
-                      padding: const EdgeInsets.only(top: 10, right: 10),
-                      child: CategoryItem(
-                        item: i,
-                      ))
-              ],
-            ),
-          )
-        : Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              "Pupler",
-              style: TextStyle(
-                  color: MyThem.grey,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
-            ),
-          );
+    return Container(
+      height: 80,
+      color: MyThem.wight,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          if (shouldShowHeader)
+            for (int i = 0; i < cot.length; i++)
+              Padding(
+                  padding: const EdgeInsets.only(top: 10, right: 10),
+                  child: Obx(() {
+                    return CategoryItem(
+                      color: _serviceController.selectedCategory.value == i
+                          ? MyThem.secondaryColor
+                          : MyThem.primaryColor,
+                      item: cot[i],
+                    );
+                  }))
+          else
+            const MyLabel(text: "Puperl", minTextSize: 20)
+        ],
+      ),
+    );
   }
 
   @override

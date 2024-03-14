@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../components/constant/them.dart';
 
@@ -21,7 +22,7 @@ class LogOutButton extends StatelessWidget {
             ),
             alignment: Alignment.center,
             child: AutoSizeText(
-              "Log out",
+              "logout".tr,
               minFontSize: 18,
               style: MyThem.nfontStyle.copyWith(fontWeight: FontWeight.bold),
             ),

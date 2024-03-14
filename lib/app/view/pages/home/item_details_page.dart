@@ -14,7 +14,8 @@ class ItemDetailsPage extends StatelessWidget {
     final Service service = Get.arguments;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Details"),
+        title: Text("details".tr),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
