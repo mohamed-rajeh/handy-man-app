@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ser/app/controller/service_controller.dart';
 import 'package:ser/app/model/service_model.dart';
+import 'package:ser/components/constant/links.dart';
 import 'package:ser/components/constant/them.dart';
 
 class HandyManServicePage extends StatelessWidget {
@@ -11,25 +12,22 @@ class HandyManServicePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Map? mp = Get.arguments;
-    String? title = mp!["title"];
-    int? id = mp["id"];
     ServiceController serviceController = Get.find();
     return Scaffold(
       backgroundColor: MyThem.wight,
       appBar: AppBar(
         scrolledUnderElevation: 0,
-        title: Text(
-          title ?? "null",
+        title: const Text(
+          "Hand Man",
         ),
         centerTitle: true,
         backgroundColor: MyThem.wight,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Obx(() {
+        child: GetBuilder<ServiceController>(builder: (con) {
           List items = serviceController.services
-              .where((element) => element.category == id)
+              .where((element) => element.category == 1)
               .toList();
           return HandManServicePageItems(
             items: items,
@@ -83,7 +81,12 @@ class HomeServiceItemDetails extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(flex: 3, child: Image.asset("images/Logo.png")),
+              Expanded(
+                  flex: 3,
+                  child:
+                      service!.picture != null && service!.picture!.isNotEmpty
+                          ? Image.network(imagesUri + service!.picture!)
+                          : Image.asset("images/Logo.png")),
               Expanded(
                   child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,12 +94,12 @@ class HomeServiceItemDetails extends StatelessWidget {
                   Text(
                     service!.name!,
                     overflow: TextOverflow.ellipsis,
-                    style: MyThem.tfontStyle,
+                    style:
+                        MyThem.nfontStyle.copyWith(fontWeight: FontWeight.bold),
                   ),
                   Text(
                     service!.description!,
                     overflow: TextOverflow.ellipsis,
-                    style: MyThem.nfontStyle,
                   ),
                 ],
               ))

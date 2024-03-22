@@ -16,7 +16,7 @@ class ItemDetailsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text("details".tr),
         centerTitle: true,
-        elevation: 0,
+        scrolledUnderElevation: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),

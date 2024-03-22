@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/get_core.dart';
 import 'package:ser/app/controller/service_controller.dart';
 import 'package:ser/app/view/pages/home/notifications_page.dart';
 import 'package:ser/components/constant/them.dart';
@@ -120,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                     // End Catogrys items
 
                     // puplur items and more
-                    Obx(() {
+                    GetBuilder<ServiceController>(builder: (context) {
                       List s = serviceController.services;
                       if (serviceController.isAll.isFalse) {
                         s = s

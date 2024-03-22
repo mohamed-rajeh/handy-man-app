@@ -4,16 +4,15 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:ser/components/constant/data.dart';
+import 'package:ser/components/constant/links.dart';
 
 import '../model/service_model.dart';
-import 'crud.dart';
 import 'package:http/http.dart' as http;
 
 class ServiceController extends GetxController {
-  List services = [].obs;
+  List services = [];
   var isAll = true.obs;
   var selectedCategory = 0.obs;
-  final Crud _crud = Crud();
 
   checkCat(cat) {
     selectedCategory.value = cat;
@@ -25,12 +24,10 @@ class ServiceController extends GetxController {
     services.addAll(servicesData);
   }
 
-  String img = "http://10.0.2.2/ser/images/";
   Future<Map> fetchService() async {
     print("started");
-    String url = "http://10.0.2.2/ser/service/get_services.php";
 
-    final response = await http.get(Uri.parse(url));
+    final response = await http.get(Uri.parse(getAllServeces));
     print(response.statusCode);
 
     if (response.statusCode == 200) {
@@ -42,21 +39,6 @@ class ServiceController extends GetxController {
     }
   }
 
-  Future<void> fetchSedrvice() async {
-    const serverUrl = "http://10.0.0.2/ser/service/get_services.php";
-
-    try {
-      final responseBody = await _crud.getRequest(serverUrl);
-      print(responseBody);
-      final data = responseBody['data'] as List<dynamic>;
-      services.addAll(data
-          .map((service) => Service.fromJson(service as Map<String, dynamic>))
-          .toList());
-    } catch (e) {
-      print("Error fetching services: $e");
-    }
-  }
-
   parseServices() async {
     final jsonMap = await fetchService();
     final data = jsonMap['data'] as List<dynamic>;
@@ -65,6 +47,7 @@ class ServiceController extends GetxController {
         .toList();
     print(iterable.length);
     services.addAll(iterable);
+    update();
   }
 
   @override

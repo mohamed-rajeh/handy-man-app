@@ -13,7 +13,6 @@ class ItServicePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ServiceController serviceController = Get.find();
     return Scaffold(
       backgroundColor: MyThem.wight,
       appBar: AppBar(
@@ -26,14 +25,16 @@ class ItServicePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-        child: Obx(() {
-          List items = serviceController.services
-              .where((element) => element.category == 2) //! shud fix
-              .toList();
-          return ServicePageItems(
-            items: items,
-          );
-        }),
+        child: GetBuilder<ServiceController>(
+            init: ServiceController(),
+            builder: (serviceController) {
+              List items = serviceController.services
+                  .where((element) => element.category == 2) //! shud fix
+                  .toList();
+              return ServicePageItems(
+                items: items,
+              );
+            }),
       ),
     );
   }

@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
             name: "/handyman_service", page: () => const HandyManServicePage()),
         GetPage(name: "/more_section", page: () => const ItServicePage()),
         GetPage(name: "/item_details", page: () => const ItemDetailsPage()),
-        GetPage(name: "/bookin_location", page: () => const BookingPage()),
+        GetPage(name: "/bookin_location", page: () => BookingPage()),
         GetPage(
             name: "/booking_details", page: () => const BookingDetailsPage())
       ],
