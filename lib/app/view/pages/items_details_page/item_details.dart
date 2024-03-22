@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:ser/components/shared/my_button.dart';
 
@@ -27,7 +29,7 @@ class ItemDetails extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ItemHeader(photo: service!.photo),
+          ItemHeader(photo: service!.picture),
           const SizedBox(height: 16),
           Expanded(
               child: ItemBody(

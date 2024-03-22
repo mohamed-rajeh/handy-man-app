@@ -22,11 +22,11 @@ class BookingDetailsPage extends StatelessWidget {
         centerTitle: true,
         scrolledUnderElevation: 0,
       ),
-      body: Padding(
-        padding: EdgeInsets.all(10.0),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(10.0),
           child: SizedBox(
-            height: Get.size.height - 100,
+            height: MediaQuery.of(context).size.height - 100,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -47,7 +47,7 @@ class BookingDetailsPage extends StatelessWidget {
                           minTextSize: 20,
                         ),
                         Text(
-                          service!.name,
+                          service!.name!,
                           style: MyThem.nfontStyle,
                         )
                       ],

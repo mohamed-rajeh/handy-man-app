@@ -15,7 +15,7 @@ class ItemBody extends StatelessWidget {
             children: [
               // the name of service
               Text(
-                service.name,
+                service.name!,
                 style: MyThem.tfontStyle,
               ),
               // the price of service
@@ -28,14 +28,19 @@ class ItemBody extends StatelessWidget {
           const SizedBox(height: 16),
           // the decription of service
           Text(
-            service.description,
+            service.description!,
             style: MyThem.nfontStyle,
           ),
           const SizedBox(height: 16),
           // the details of service
-          Text(
-            service.details ?? "No details",
-            style: MyThem.nfontStyle,
+
+          Expanded(
+            child: SingleChildScrollView(
+              child: Text(
+                service.details ?? "No details",
+                style: MyThem.nfontStyle,
+              ),
+            ),
           ),
         ],
       ),

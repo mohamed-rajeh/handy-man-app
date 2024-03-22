@@ -6,8 +6,8 @@ List servicesData = [
       id: 1,
       name: "handy manflkvofvjfvfmv;,f ;f",
       category: 1,
-      photo: null,
-      price: 3000,
+      picture: null,
+      price: 5225,
       description: "lorem lorem loremlorem lorem lorem",
       details:
           "loremloremloremloremloremloremloremloremlorem lorem lorem lorem loremloremlorem"),
@@ -15,7 +15,7 @@ List servicesData = [
       id: 1,
       name: "karhbaaey",
       category: 1,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:
@@ -24,7 +24,7 @@ List servicesData = [
       id: 1,
       name: "mohands",
       category: 2,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:
@@ -33,7 +33,7 @@ List servicesData = [
       id: 1,
       name: "sbaak",
       category: 1,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:
@@ -42,7 +42,7 @@ List servicesData = [
       id: 1,
       name: "pinter",
       category: 1,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:
@@ -51,7 +51,7 @@ List servicesData = [
       id: 1,
       name: "programer",
       category: 2,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:
@@ -60,7 +60,7 @@ List servicesData = [
       id: 1,
       name: "pinter",
       category: 1,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:
@@ -69,7 +69,7 @@ List servicesData = [
       id: 1,
       name: "pinter",
       category: 1,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:
@@ -78,7 +78,7 @@ List servicesData = [
       id: 1,
       name: "pinter",
       category: 1,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:
@@ -87,7 +87,7 @@ List servicesData = [
       id: 1,
       name: "pinter",
       category: 1,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:
@@ -96,7 +96,7 @@ List servicesData = [
       id: 1,
       name: "pinter",
       category: 1,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:
@@ -105,7 +105,7 @@ List servicesData = [
       id: 1,
       name: "pinter",
       category: 1,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:
@@ -114,7 +114,7 @@ List servicesData = [
       id: 1,
       name: "pinter",
       category: 1,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:
@@ -123,7 +123,7 @@ List servicesData = [
       id: 1,
       name: "pinter",
       category: 1,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:
@@ -132,7 +132,7 @@ List servicesData = [
       id: 1,
       name: "pinter",
       category: 1,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:
@@ -141,7 +141,7 @@ List servicesData = [
       id: 1,
       name: "pinter",
       category: 1,
-      photo: null,
+      picture: null,
       price: 3000,
       description: "lorem lorem lorem",
       details:

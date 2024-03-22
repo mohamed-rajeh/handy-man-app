@@ -89,12 +89,12 @@ class HomeServiceItemDetails extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    service!.name,
+                    service!.name!,
                     overflow: TextOverflow.ellipsis,
                     style: MyThem.tfontStyle,
                   ),
                   Text(
-                    service!.description,
+                    service!.description!,
                     overflow: TextOverflow.ellipsis,
                     style: MyThem.nfontStyle,
                   ),

@@ -13,7 +13,9 @@ class ItemHeader extends StatelessWidget {
       aspectRatio: 16 / 10,
       child: Container(
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-        child: Image.asset("images/Logo.png"),
+        child: photo!.isNotEmpty || photo != null
+            ? Image.network(photo!)
+            : Image.asset("images/Logo.png"),
       ),
     );
   }
