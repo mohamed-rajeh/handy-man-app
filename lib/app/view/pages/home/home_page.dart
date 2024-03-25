@@ -3,10 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/get_core.dart';
-import 'package:ser/app/controller/service_controller.dart';
+import 'package:ser/app/services/get_serviecs.dart';
 import 'package:ser/app/view/pages/home/notifications_page.dart';
 import 'package:ser/components/constant/them.dart';
 
+import '../../../../components/shared/my_lable.dart';
 import '../../widget/home/ad_widget.dart';
 import '../../widget/home/category_header_delegate.dart';
 import '../../widget/home/items_sliver_gride.dart';
@@ -21,7 +22,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   TextEditingController controller = TextEditingController();
-  ServiceController serviceController = Get.put(ServiceController());
+  GetServicesController serviceController = Get.put(GetServicesController());
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                         child: TextField(
                       style: TextStyle(fontSize: 16, color: MyThem.black),
                       cursorHeight: 30,
-                      cursorColor: MyThem.wight,
+                      cursorColor: MyThem.white,
                       controller: controller,
                       onChanged: (value) => setState(() {}),
                       decoration: InputDecoration(
@@ -113,15 +114,16 @@ class _HomePageState extends State<HomePage> {
                       )),
                     ),
                     // Catogrys items
+
                     SliverPersistentHeader(
                       pinned: true,
                       floating: false,
                       delegate: CategoryHeaderDelegate(),
                     ),
-                    // End Catogrys items
+                    // // End Catogrys items
 
                     // puplur items and more
-                    GetBuilder<ServiceController>(builder: (context) {
+                    GetBuilder<GetServicesController>(builder: (context) {
                       List s = serviceController.services;
                       if (serviceController.isAll.isFalse) {
                         s = s

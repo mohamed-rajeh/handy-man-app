@@ -24,7 +24,7 @@ class ItemDetails extends StatelessWidget {
     return Container(
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-        color: MyThem.wight,
+        color: MyThem.white,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(

@@ -35,7 +35,7 @@ class _AppState extends State<App> {
         // ? For what !!!
 
         resizeToAvoidBottomInset: true,
-        backgroundColor: MyThem.wight,
+        backgroundColor: MyThem.white,
         body: pages[_currentPage],
         bottomNavigationBar: CubertoBottomBar(
           key: const Key("BottomBar"),

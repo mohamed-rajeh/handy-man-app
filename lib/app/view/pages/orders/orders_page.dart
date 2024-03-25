@@ -36,14 +36,14 @@ class _BookingPageState extends State<OrdersPage> {
       initialIndex: 0,
       child: Scaffold(
           appBar: AppBar(
-            backgroundColor: MyThem.wight,
+            backgroundColor: MyThem.white,
             foregroundColor: MyThem.secondaryColor,
             title: Text("Booking"),
             centerTitle: true,
             bottom: TabBar(
-                dividerColor: MyThem.wight,
-                labelColor: MyThem.wight,
-                indicatorColor: MyThem.wight,
+                dividerColor: MyThem.white,
+                labelColor: MyThem.white,
+                indicatorColor: MyThem.white,
                 indicator: BoxDecoration(
                     color: MyThem.secondaryColor,
                     borderRadius: BorderRadius.circular(10)),

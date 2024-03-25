@@ -16,7 +16,7 @@ class BookingDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Service? service = Get.arguments;
     return Scaffold(
-      backgroundColor: MyThem.wight,
+      backgroundColor: MyThem.white,
       appBar: AppBar(
         title: Text("bookingdetails".tr),
         centerTitle: true,

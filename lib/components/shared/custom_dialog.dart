@@ -26,7 +26,7 @@ class MyDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: MyThem.wight,
+          color: MyThem.white,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: MyThem.secondaryColor)),
       padding: EdgeInsets.all(20),
@@ -35,7 +35,7 @@ class MyDialog extends StatelessWidget {
             backgroundColor: MyThem.secondaryColor,
             child: Icon(
               Icons.exit_to_app,
-              color: MyThem.wight,
+              color: MyThem.white,
             )),
         SizedBox(
           height: 10,
@@ -56,7 +56,7 @@ class MyDialog extends StatelessWidget {
                 padding: EdgeInsets.all(5),
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                    color: MyThem.wight,
+                    color: MyThem.white,
                     border: Border.all(color: MyThem.secondaryColor),
                     borderRadius: BorderRadius.circular(5)),
                 child: Text(
@@ -83,7 +83,7 @@ class MyDialog extends StatelessWidget {
                 child: Text(
                   btn2Text ?? "ok".tr,
                   style: TextStyle(
-                      color: MyThem.wight,
+                      color: MyThem.white,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),

@@ -25,7 +25,7 @@ class MyButton extends StatelessWidget {
         child: Text(
           lable,
           style: TextStyle(
-              color: MyThem.wight, fontSize: 16, fontWeight: FontWeight.bold),
+              color: MyThem.white, fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
     );

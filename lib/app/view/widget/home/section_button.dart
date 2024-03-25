@@ -26,7 +26,7 @@ class SectionButton extends StatelessWidget {
               child: Text(
                 title,
                 style: MyThem.nfontStyle
-                    .copyWith(color: MyThem.wight, fontSize: 24),
+                    .copyWith(color: MyThem.white, fontSize: 24),
               )),
         ),
       ),

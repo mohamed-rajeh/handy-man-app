@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ser/app/controller/service_controller.dart';
+import 'package:ser/app/services/get_serviecs.dart';
 import 'package:ser/app/model/category_model.dart';
 import 'package:ser/components/constant/them.dart';
 
@@ -11,7 +11,7 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ServiceController serviceController = Get.put(ServiceController());
+    GetServicesController serviceController = Get.put(GetServicesController());
     return InkWell(
       onTap: () => serviceController.checkCat(item.id),
       child: Container(
@@ -23,7 +23,7 @@ class CategoryItem extends StatelessWidget {
         child: Text(
           item.name,
           style: MyThem.tfontStyle.copyWith(
-            color: color == MyThem.secondaryColor ? MyThem.wight : MyThem.black,
+            color: color == MyThem.secondaryColor ? MyThem.white : MyThem.black,
           ),
         ),
       ),

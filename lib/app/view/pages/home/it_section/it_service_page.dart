@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ser/app/controller/service_controller.dart';
-import 'package:ser/app/model/service_model.dart';
-import 'package:ser/components/constant/them.dart';
 
-import '../../items_details_page/item_details.dart';
+import 'package:ser/app/model/service_model.dart';
+import 'package:ser/app/services/get_serviecs.dart';
+import 'package:ser/app/view/widget/home/home_service_item_details.dart';
+import 'package:ser/components/constant/them.dart';
 
 class ItServicePage extends StatelessWidget {
   const ItServicePage({
@@ -14,19 +14,19 @@ class ItServicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyThem.wight,
+      backgroundColor: MyThem.white,
       appBar: AppBar(
         scrolledUnderElevation: 0,
         title: const Text(
           "IT sevices",
         ),
         centerTitle: true,
-        backgroundColor: MyThem.wight,
+        backgroundColor: MyThem.white,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-        child: GetBuilder<ServiceController>(
-            init: ServiceController(),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+        child: GetBuilder<GetServicesController>(
+            init: GetServicesController(),
             builder: (serviceController) {
               List items = serviceController.services
                   .where((element) => element.category == 2) //! shud fix
@@ -51,11 +51,14 @@ class ServicePageItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 1, mainAxisSpacing: 40, childAspectRatio: .8),
+            crossAxisCount: 2,
+            mainAxisSpacing: 40,
+            crossAxisSpacing: 10,
+            childAspectRatio: .8),
         itemCount: items.length,
         itemBuilder: (context, index) {
           Service s = items[index];
-          return ItemDetails(service: s);
+          return HomeServiceItemDetails(service: s);
         });
   }
 }

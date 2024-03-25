@@ -7,7 +7,7 @@ class MyThem {
   static Color secondaryColor = const Color(0xff0E8388); // Dark teal
   static Color tertiaryColor = const Color(0xff2E4F4F); // Dark grayish-teal
   static Color accentColor = const Color(0xff2C3333); // Dark gray
-  static Color wight = Colors.white;
+  static Color white = Colors.white;
   static Color black = Colors.black;
   static Color grey = Colors.grey;
 

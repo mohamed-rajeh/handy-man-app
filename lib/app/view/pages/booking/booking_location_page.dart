@@ -51,7 +51,8 @@ class _BookingPageState extends State<BookingPage> {
     _goToTheLake();
     markers.add(Marker(
         markerId: MarkerId("1"),
-        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
+        icon: await BitmapDescriptor.fromAssetImage(
+            ImageConfiguration.empty, "images/marker.png"),
         position: LatLng(position.latitude, position.longitude)));
     setState(() {});
   }

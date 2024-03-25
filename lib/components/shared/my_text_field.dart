@@ -65,7 +65,7 @@ class _CTextFieldState extends State<MyTextField> {
             focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: MyThem.secondaryColor, width: 2),
                 borderRadius: BorderRadius.circular(5)),
-            fillColor: widget.color ?? MyThem.wight,
+            fillColor: widget.color ?? MyThem.white,
             filled: true,
             contentPadding:
                 const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),

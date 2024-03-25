@@ -35,7 +35,7 @@ class AccountSettingPage extends StatelessWidget {
                 MyTextField(
                   borderColre: MyThem.secondaryColor,
                   hint: "userameHint".tr,
-                  color: MyThem.wight,
+                  color: MyThem.white,
                 ),
                 const SizedBox(
                   height: 16,
@@ -44,7 +44,7 @@ class AccountSettingPage extends StatelessWidget {
                 const SizedBox(height: 16),
                 MyTextField(
                   borderColre: MyThem.secondaryColor,
-                  color: MyThem.wight,
+                  color: MyThem.white,
                   hint: "passwordHint".tr,
                 ),
                 const SizedBox(
