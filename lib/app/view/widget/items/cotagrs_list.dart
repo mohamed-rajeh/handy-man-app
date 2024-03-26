@@ -13,7 +13,6 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     GetServicesController serviceController = Get.put(GetServicesController());
     return InkWell(
-      onTap: () => serviceController.checkCat(item.id),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         decoration: BoxDecoration(

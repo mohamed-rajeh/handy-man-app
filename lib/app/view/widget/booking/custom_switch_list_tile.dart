@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ser/app/model/order_model.dart';
 
 import '../../../../components/constant/them.dart';
 import 'my_list_tile.dart';
@@ -8,10 +9,10 @@ import 'my_list_tile_with_details.dart';
 class CustomSwitchListTile extends StatefulWidget {
   const CustomSwitchListTile({
     super.key,
-    required String id,
-  }) : _id = id;
+    required Order item,
+  }) : _order = item;
 
-  final String _id;
+  final Order _order;
 
   @override
   State<CustomSwitchListTile> createState() => _CustomListTailState();
@@ -32,8 +33,8 @@ class _CustomListTailState extends State<CustomSwitchListTile> {
                   ? CrossFadeState.showFirst
                   : CrossFadeState.showSecond,
               duration: const Duration(milliseconds: 300),
-              firstChild: CustomListTile(id: widget._id),
-              secondChild: CustomListTileWithDetails(id: widget._id),
+              firstChild: CustomListTile(order: widget._order),
+              secondChild: CustomListTileWithDetails(order: widget._order),
               secondCurve: Curves.easeInOutQuart,
             )),
       ),

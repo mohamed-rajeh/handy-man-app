@@ -1,15 +1,16 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:ser/app/model/order_model.dart';
 
 import '../../../../components/constant/them.dart';
 
 class CustomListTileWithDetails extends StatelessWidget {
   const CustomListTileWithDetails({
     super.key,
-    required String id,
-  }) : _id = id;
+    required Order order,
+  }) : _order = order;
 
-  final String _id;
+  final Order _order;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class CustomListTileWithDetails extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  " id : $_id",
+                  " order : ${_order.id}",
                   style: MyThem.nfontStyle,
                 ),
                 const SizedBox(width: 20),
@@ -32,15 +33,15 @@ class CustomListTileWithDetails extends StatelessWidget {
               ],
             ),
             Text(
-              "Service",
+              _order.service!.name!,
               style: MyThem.nfontStyle,
             ),
             Text(
-              "Price",
+              r"$" "${_order.service!.price!}",
               style: MyThem.nfontStyle,
             ),
             Text(
-              "State : ",
+              "State : ${_order.state!.name!}",
               style: MyThem.nfontStyle,
             )
           ]),

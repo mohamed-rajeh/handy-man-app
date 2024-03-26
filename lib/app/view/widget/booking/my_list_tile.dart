@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:ser/app/model/order_model.dart';
 
 import '../../../../components/constant/them.dart';
 
 class CustomListTile extends StatelessWidget {
   const CustomListTile({
     super.key,
-    required String id,
-  }) : _id = id;
+    required Order order,
+  }) : _order = order;
 
-  final String _id;
+  final Order _order;
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +25,14 @@ class CustomListTile extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(" id : $_id"),
+            Text(" order : ${_order.id}"),
             Text(
-              "Service",
+              _order.service!.name!,
               style: MyThem.nfontStyle,
             )
           ]),
       trailing: Text(
-        "state",
+        _order.state!.name!,
         style: MyThem.nfontStyle,
       ),
     );

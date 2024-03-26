@@ -2,12 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/get_core.dart';
+
 import 'package:ser/app/services/get_serviecs.dart';
 import 'package:ser/app/view/pages/home/notifications_page.dart';
 import 'package:ser/components/constant/them.dart';
 
-import '../../../../components/shared/my_lable.dart';
 import '../../widget/home/ad_widget.dart';
 import '../../widget/home/category_header_delegate.dart';
 import '../../widget/home/items_sliver_gride.dart';
@@ -125,13 +124,13 @@ class _HomePageState extends State<HomePage> {
                     // puplur items and more
                     GetBuilder<GetServicesController>(builder: (context) {
                       List s = serviceController.services;
-                      if (serviceController.isAll.isFalse) {
-                        s = s
-                            .where((element) =>
-                                element.category ==
-                                serviceController.selectedCategory.value)
-                            .toList();
-                      }
+                      // if (serviceController.isAll.isFalse) {
+                      //   s = s
+                      //       .where((element) =>
+                      //           element.category ==
+                      //           serviceController.selectedCategory.value)
+                      //       .toList();
+                      // }
 
                       return HomePopruleItem(service: s);
                     }),

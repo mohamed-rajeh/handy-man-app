@@ -10,10 +10,10 @@ import 'pages/profile/profile_page.dart';
 List<TabData> tabs = [
   TabData(
       iconData: Icons.person, title: "Profile", tabColor: MyThem.tertiaryColor),
-  TabData(iconData: Icons.home, title: "home", tabColor: MyThem.accentColor),
+  TabData(iconData: Icons.home, title: "Home", tabColor: MyThem.accentColor),
   TabData(
       iconData: FontAwesomeIcons.jediOrder,
-      title: "Booking",
+      title: "Orders",
       tabColor: MyThem.secondaryColor),
 ];
 List pages = const [ProfilePage(), HomePage(), OrdersPage()];

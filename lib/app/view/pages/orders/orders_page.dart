@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ser/app/services/get_orders.dart';
 import 'package:ser/app/view/pages/orders/old_orders_page.dart';
 
 import 'package:ser/components/constant/them.dart';
@@ -31,6 +33,8 @@ class _BookingPageState extends State<OrdersPage> {
 
   @override
   Widget build(BuildContext context) {
+    GetOrdersServiceController _controller =
+        Get.put(GetOrdersServiceController());
     return DefaultTabController(
       length: 2,
       initialIndex: 0,
