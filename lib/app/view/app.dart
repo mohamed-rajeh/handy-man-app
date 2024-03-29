@@ -1,27 +1,14 @@
 import 'package:cuberto_bottom_bar/cuberto_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'package:get/get.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:ser/app/controller/app_controller.dart';
 
 import '../../components/constant/them.dart';
-import 'pages/orders/orders_page.dart';
-import 'pages/home/home_page.dart';
-import 'pages/profile/profile_page.dart';
-
-List<TabData> tabs = [
-  TabData(
-      iconData: Icons.person, title: "Profile", tabColor: MyThem.tertiaryColor),
-  TabData(iconData: Icons.home, title: "Home", tabColor: MyThem.accentColor),
-  TabData(
-      iconData: FontAwesomeIcons.jediOrder,
-      title: "Orders",
-      tabColor: MyThem.secondaryColor),
-];
-List pages = const [ProfilePage(), HomePage(), OrdersPage()];
-int _currentPage = 1;
-String currentTitle = tabs[_currentPage].title;
-Color currentColor = tabs[_currentPage].tabColor!;
 
 class App extends StatefulWidget {
+  static const String id = "/";
   const App({super.key});
 
   @override
@@ -31,37 +18,51 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        // ? For what !!!
+    // it well come from order details page
+    // if user sent an order
 
-        resizeToAvoidBottomInset: true,
-        backgroundColor: MyThem.white,
-        body: pages[_currentPage],
-        bottomNavigationBar: CubertoBottomBar(
-          key: const Key("BottomBar"),
-          inactiveIconColor: MyThem.secondaryColor,
-          tabStyle: CubertoTabStyle.styleNormal,
-          selectedTab: _currentPage,
-          tabs: tabs
-              .map(
-                (value) => TabData(
-                  key: Key(value.title),
-                  iconData: value.iconData,
-                  title: value.title,
-                  tabColor: value.tabColor,
-                  tabGradient: value.tabGradient,
-                ),
-              )
-              .toList(),
-          onTabChangedListener: (position, title, color) {
-            setState(() {
-              _currentPage = position;
-              currentTitle = title;
-              if (color != null) {
-                currentColor = color;
-              }
-            });
-          },
-        ));
+    return GetBuilder<AppController>(
+        init: AppController(),
+        builder: (controller) {
+          return ModalProgressHUD(
+            color: MyThem.tertiaryColor,
+            inAsyncCall: controller.isLoding,
+            progressIndicator: CircularProgressIndicator(
+              color: MyThem.primaryColor,
+            ),
+            child: Scaffold(
+
+                // ? For what !!!
+                resizeToAvoidBottomInset: true,
+                backgroundColor: MyThem.white,
+                body: controller.pages[controller.currentPage],
+                bottomNavigationBar: CubertoBottomBar(
+                  key: const Key("BottomBar"),
+                  inactiveIconColor: MyThem.secondaryColor,
+                  tabStyle: CubertoTabStyle.styleNormal,
+                  selectedTab: controller.currentPage,
+                  tabs: controller.tabs
+                      .map(
+                        (value) => TabData(
+                          key: Key(value.title),
+                          iconData: value.iconData,
+                          title: value.title,
+                          tabColor: value.tabColor,
+                          tabGradient: value.tabGradient,
+                        ),
+                      )
+                      .toList(),
+                  onTabChangedListener: (position, title, color) {
+                    setState(() {
+                      controller.currentPage = position;
+                      controller.currentTitle = title;
+                      if (color != null) {
+                        controller.currentColor = color;
+                      }
+                    });
+                  },
+                )),
+          );
+        });
   }
 }

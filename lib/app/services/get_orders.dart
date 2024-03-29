@@ -9,10 +9,11 @@ import '../model/order_model.dart';
 class GetOrdersServiceController extends GetxController {
   List<Order> orders = [];
   late List data;
-  parseServices() async {
-    final response = await Api().get(url: getOrders);
+  getOrders() async {
+    final response = await Api().get(url: getOrdersLink);
 
     if (response["status"] != "error") {
+      print(response["data"]);
       data = response['data'] as List<dynamic>;
     } else {
       return;
@@ -22,13 +23,14 @@ class GetOrdersServiceController extends GetxController {
         .map((order) => Order.fromMap(order as Map<String, dynamic>))
         .toList();
     print(iterable.length);
+    orders.clear();
     orders.addAll(iterable);
     update();
   }
 
   @override
   void onInit() {
-    parseServices();
+    getOrders();
     super.onInit();
   }
 }

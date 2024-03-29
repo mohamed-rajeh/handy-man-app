@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ser/helper/function.dart';
 
 import '../../../../components/constant/links.dart';
 import '../../../../components/constant/them.dart';
@@ -36,10 +37,10 @@ class HomeServiceItemDetails extends StatelessWidget {
               children: [
                 Expanded(
                     flex: 3,
-                    child:
-                        service!.picture != null && service!.picture!.isNotEmpty
-                            ? Image.network(imagesUri + service!.picture!)
-                            : Image.asset("images/Logo.png")),
+                    child: service!.picture != null &&
+                            service!.picture!.isNotEmpty
+                        ? Image.network(getImageFromServer(service!.picture!))
+                        : Image.asset("images/Logo.png")),
                 Expanded(
                     child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

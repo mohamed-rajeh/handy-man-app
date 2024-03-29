@@ -10,9 +10,11 @@ class Order {
   final DateTime? date;
   final OrderState? state;
   final String? note;
+  final String? phone;
   final double? lat;
   final double? long;
   final String? locationNote;
+
   Order({
     this.id,
     this.custmor,
@@ -20,22 +22,22 @@ class Order {
     this.date,
     this.state,
     this.note,
+    this.phone,
     this.lat,
     this.long,
     this.locationNote,
   });
 
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'id': id,
-      'custmor': custmor,
-      'service': service!.toMap(),
-      'date': date?.millisecondsSinceEpoch,
-      'state': {"id": state!.id, "name": state!.name},
-      'note': note,
-      'lat': lat,
-      'long': long,
-      'locationNote': locationNote,
+  Map<String, String> toMap() {
+    return <String, String>{
+      'customer': custmor.toString(),
+      'service': service!.id.toString(),
+      'date': date.toString(),
+      'phone': phone.toString(),
+      'lat': lat.toString(),
+      'long': long.toString(),
+      'location_note': locationNote ?? "",
+      'note': note ?? "",
     };
   }
 
@@ -47,6 +49,7 @@ class Order {
       date: map['date'] != null ? DateTime.parse(map['date'] as String) : null,
       state: map['state'] != null ? OrderState.fromMap(map['state']) : null,
       note: map['note'] != null ? map['note'] as String : null,
+      phone: map['phone'] != null ? map['phone'] as String : null,
       lat: map['lat'] != null ? map['lat'] as double : null,
       long: map['long'] != null ? map['long'] as double : null,
       locationNote:

@@ -7,6 +7,7 @@ import 'package:ser/components/constant/them.dart';
 import '../../../widget/home/home_service_item_details.dart';
 
 class HandyManServicePage extends StatelessWidget {
+  static const String id = "/handyman_service";
   const HandyManServicePage({
     super.key,
   });

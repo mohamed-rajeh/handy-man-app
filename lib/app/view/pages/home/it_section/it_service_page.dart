@@ -7,6 +7,7 @@ import 'package:ser/app/view/widget/home/home_service_item_details.dart';
 import 'package:ser/components/constant/them.dart';
 
 class ItServicePage extends StatelessWidget {
+  static const String id = "/it_section";
   const ItServicePage({
     super.key,
   });

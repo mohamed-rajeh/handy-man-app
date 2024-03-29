@@ -1,4 +1,5 @@
-String imagesUri = "http://10.0.2.2/ser/images/";
-String server = "http://10.0.2.2/ser";
-String getAllServeces = "$server/service/get_services.php";
-String getOrders = "$server/order/get_orders.php?user=3";
+String imageLocationLink = "http://10.0.2.2/ser/images/";
+String serverLink = "http://10.0.2.2/ser"; //10.0.2.2
+String getAllServecesLink = "$serverLink/service/get_services.php";
+String getOrdersLink = "$serverLink/order/get_orders.php?user=3";
+String addOrdersLink = "$serverLink/order/add_order.php";

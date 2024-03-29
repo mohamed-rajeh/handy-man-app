@@ -40,7 +40,9 @@ class Service {
       name: map['name'] != null ? map['name'] as String : null,
       category: map['category'] != null ? map['category'] as int : null,
       picture: map['picture'] != null ? map['picture'] as String : null,
-      price: map['price'] != null ? map['price'] as double : null,
+      price: map['price'] != null
+          ? double.tryParse(map['price'].toString())
+          : null,
       available: map['available'] != null ? map['available'] as int : null,
       description:
           map['description'] != null ? map['description'] as String : null,

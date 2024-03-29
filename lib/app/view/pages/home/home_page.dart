@@ -20,8 +20,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  GetServicesController serviceController = Get.find();
+
   TextEditingController controller = TextEditingController();
-  GetServicesController serviceController = Get.put(GetServicesController());
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

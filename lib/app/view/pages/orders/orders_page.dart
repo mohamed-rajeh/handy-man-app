@@ -7,17 +7,18 @@ import 'package:ser/app/view/pages/orders/old_orders_page.dart';
 
 import 'package:ser/components/constant/them.dart';
 
-import '../../widget/booking/tab_button.dart';
+import '../../widget/order/tab_button.dart';
 import 'curent_orders_page.dart';
 
 class OrdersPage extends StatefulWidget {
+  static const String id = "/orders_page";
   const OrdersPage({super.key});
 
   @override
-  State<OrdersPage> createState() => _BookingPageState();
+  State<OrdersPage> createState() => _OrderPageState();
 }
 
-class _BookingPageState extends State<OrdersPage> {
+class _OrderPageState extends State<OrdersPage> {
   List<Widget> pages = [
     CurentOrdersPage(),
     OldOrdersPage(),
@@ -33,8 +34,7 @@ class _BookingPageState extends State<OrdersPage> {
 
   @override
   Widget build(BuildContext context) {
-    GetOrdersServiceController _controller =
-        Get.put(GetOrdersServiceController());
+    Get.lazyPut(() => GetOrdersServiceController());
     return DefaultTabController(
       length: 2,
       initialIndex: 0,
@@ -42,7 +42,7 @@ class _BookingPageState extends State<OrdersPage> {
           appBar: AppBar(
             backgroundColor: MyThem.white,
             foregroundColor: MyThem.secondaryColor,
-            title: Text("Booking"),
+            title: Text("Orders"),
             centerTitle: true,
             bottom: TabBar(
                 dividerColor: MyThem.white,

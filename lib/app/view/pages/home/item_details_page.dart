@@ -7,11 +7,12 @@ import 'package:ser/app/model/service_model.dart';
 import '../items_details_page/item_details.dart';
 
 class ItemDetailsPage extends StatelessWidget {
+  static const String id = "/item_details";
   const ItemDetailsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final Service service = Get.arguments;
+    final Service? service = Get.arguments;
     return Scaffold(
       appBar: AppBar(
         title: Text("details".tr),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ser/app/model/service_model.dart';
+import 'package:ser/helper/function.dart';
 
-import '../../../../components/constant/links.dart';
 import '../../../../components/constant/them.dart';
 
 class Item extends StatelessWidget {
@@ -20,7 +20,7 @@ class Item extends StatelessWidget {
               radius: 35,
               child: service.picture == null || service.picture!.isEmpty
                   ? const Icon(Icons.shape_line)
-                  : Image.network(imagesUri + service.picture!),
+                  : Image.network(getImageFromServer(service.picture!)),
             )),
         Text(
           service.name!,

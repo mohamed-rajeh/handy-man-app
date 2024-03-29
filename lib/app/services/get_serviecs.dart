@@ -16,20 +16,24 @@ class GetServicesController extends GetxController {
   }
 
   parseServices() async {
-    final response = await Api().get(url: getAllServeces);
+    try {
+      final iterable = await getServices();
+
+      services.addAll(iterable);
+    } catch (e) {
+      rethrow;
+    }
+
+    update();
+  }
+
+  Future<List<Service>> getServices() async {
+    await Future.delayed(const Duration(seconds: 3));
+    final response = await Api().get(url: getAllServecesLink);
     final data = response['data'] as List<dynamic>;
     List<Service> iterable = data
         .map((service) => Service.fromMap(service as Map<String, dynamic>))
         .toList();
-    print(iterable.length);
-    services.addAll(iterable);
-    update();
-  }
-
-  @override
-  void onInit() {
-    // getService();
-    parseServices();
-    super.onInit();
+    return iterable;
   }
 }
